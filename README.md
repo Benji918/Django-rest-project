@@ -1,2 +1,2 @@
 # zenrapy-backend
-The backend Repository for zenrapy
+The API Repository for zenrapy
