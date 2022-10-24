@@ -80,11 +80,10 @@ WSGI_APPLICATION = 'zenrapy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'demodatabse',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
