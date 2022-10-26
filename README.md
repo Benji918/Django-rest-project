@@ -75,7 +75,7 @@ Django Rest Framework Documentation ](https://www.django-rest-framework.org/)
     http://127.0.0.1:8000/swagger/
 ```
 - This is what you should see
-![](https://github.com/Zenrapy-V1/zenrapy-backend/blob/Benji/images/testing api.jpg)
+![](https://github.com/Zenrapy-V1/zenrapy-backend/blob/Benji/images/testing%20api.jpg)
 
 - To add the API documentation to Postman
 ```cmd
