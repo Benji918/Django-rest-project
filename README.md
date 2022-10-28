@@ -75,7 +75,7 @@ Django Rest Framework Documentation ](https://www.django-rest-framework.org/)
     http://127.0.0.1:8000/swagger/
 ```
 - This is what you should see
-![](images\testing api.jpg)
+![](https://github.com/Zenrapy-V1/zenrapy-backend/blob/Benji/images/testing%20api.jpg)
 
 - To add the API documentation to Postman
 ```cmd
@@ -86,9 +86,9 @@ Django Rest Framework Documentation ](https://www.django-rest-framework.org/)
 - Click on the 3 dashed lines
 - Click on file
 - Then click import
-![](images\img.png)
+![](https://github.com/Zenrapy-V1/zenrapy-backend/blob/Benji/images/img.png)
 
 - Click on the upload button
 - Then select the json file
 - Then click import
-![](images\img_1.png)
+![](https://github.com/Zenrapy-V1/zenrapy-backend/blob/Benji/images/img_1.png)
