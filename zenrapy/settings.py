@@ -93,10 +93,17 @@ WSGI_APPLICATION = 'zenrapy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'zenrapydb',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'HOST': 'containers-us-west-74.railway.app',
+        'PASSWORD': 'Qu2ZelC2j8trWvyZJqS7',
+        'PORT': '7186',
+        'USER': 'postgres',
+
+
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

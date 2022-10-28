@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 # Create your models here.
 class MyUserManager(UserManager):
 
-    def _create_user(self, username, email, password, **extra_fields):
+    def _create_user(self, username: str, email: str, password: str, **extra_fields) -> object:
         """
         Create and save a user with the given username, email, and password.
         """
