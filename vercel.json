@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "benji_portfolio/wsgi.py",
+            "src": "zenrapy/wsgi.py",
             "use": "@vercel/python",
             "config": {
                 "maxLambdaSize": "15mb",
@@ -24,7 +24,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "benji_portfolio/wsgi.py"
+            "dest": "zenrapy/wsgi.py"
         }
     ]
 
