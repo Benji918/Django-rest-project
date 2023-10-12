@@ -9,12 +9,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import django_heroku
+
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-load_dotenv('zenrapy-backend/.env')
-django_heroku.settings(locals())
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,8 +22,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
-
+SECRET_KEY = 'omsodsodkoskdosdosdosskodsdk2@#@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -46,7 +43,7 @@ INSTALLED_APPS = [
     'account',
     'rest_framework',
     'helpers',
-    'drf_yasg',
+    'drf_spectacular',
 ]
 
 REST_FRAMEWORK = {
@@ -99,16 +96,14 @@ WSGI_APPLICATION = 'zenrapy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'HOST': 'containers-us-west-74.railway.app',
-        'PASSWORD': 'Qu2ZelC2j8trWvyZJqS7',
-        'PORT': '7186',
+        'NAME': 'postgres',
+        'HOST': 'db.eafnhldbkpirnxglpxac.supabase.co',
+        'PASSWORD': 'XDAdF6cAk&BCcyQ',
+        'PORT': '5432',
         'USER': 'postgres',
-
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -142,18 +137,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static'),
-]
-
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Activate Django-Heroku.
-django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -161,3 +151,14 @@ django_heroku.settings(locals())
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# API Docs settings
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Roammates API',
+    'DESCRIPTION': 'Roammates  project API Documents',
+    'VERSION': '1.0.0',
+    'SCHEMA_PATH_PREFIX': '/backend/api/*',
+    # 'SERVE_PERMISSIONS': ['rest_framework.permissions.IsAuthenticated'],
+    'DISABLE_ERRORS_AND_WARNINGS': True,
+    'COMPONENT_SPLIT_REQUEST': True
+}
